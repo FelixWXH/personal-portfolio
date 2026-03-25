@@ -11,7 +11,7 @@
     --text-muted: #6b6b7b;
     --accent-primary: #3b82f6;
     --accent-secondary: #1e40af;
-    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1e40af 100%);
+    --accent-gradient: linear-gradient(135deg, #0891b2 0%, #3b82f6 50%, #1e40af 100%);
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -198,7 +198,7 @@ a {
 .sphere-1 {
     width: 600px;
     height: 600px;
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
     top: -200px;
     right: -100px;
     animation-delay: 0s;
@@ -207,7 +207,7 @@ a {
 .sphere-2 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
     bottom: -100px;
     left: -100px;
     animation-delay: -5s;
@@ -216,7 +216,7 @@ a {
 .sphere-3 {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -487,7 +487,7 @@ a {
 
 .skill-tag {
     padding: 0.4rem 0.8rem;
-    background: var(--accent-gradient);
+    background: #1e40af;
     color: white;
     border-radius: 20px;
     font-size: 0.85rem;
