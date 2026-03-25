@@ -1,55 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fce7f3"/>
-      <stop offset="100%" style="stop-color:#fbcfe8"/>
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
     </linearGradient>
   </defs>
   
-  <!-- 粉色渐变圆形背景 -->
+  <!-- 蓝色渐变圆形背景 -->
   <circle cx="32" cy="32" r="32" fill="url(#bgGrad)"/>
   
-  <!-- 左耳朵 - 橙色外侧 -->
-  <ellipse cx="14" cy="16" rx="8" ry="12" fill="#d97706" transform="rotate(-15 14 16)"/>
-  <!-- 左耳朵内侧 - 浅色 -->
-  <ellipse cx="15" cy="18" rx="5" ry="8" fill="#fef3c7" transform="rotate(-15 15 18)"/>
+  <!-- 左耳朵 - 缩小比例 -->
+  <ellipse cx="18" cy="14" rx="6" ry="9" fill="#d97706" transform="rotate(-10 18 14)"/>
+  <ellipse cx="19" cy="15" rx="4" ry="6" fill="#fef3c7" transform="rotate(-10 19 15)"/>
   
-  <!-- 右耳朵 - 橙色外侧 -->
-  <ellipse cx="50" cy="16" rx="8" ry="12" fill="#d97706" transform="rotate(15 50 16)"/>
-  <!-- 右耳朵内侧 - 浅色 -->
-  <ellipse cx="49" cy="18" rx="5" ry="8" fill="#fef3c7" transform="rotate(15 49 18)"/>
+  <!-- 右耳朵 - 缩小比例 -->
+  <ellipse cx="46" cy="14" rx="6" ry="9" fill="#d97706" transform="rotate(10 46 14)"/>
+  <ellipse cx="45" cy="15" rx="4" ry="6" fill="#fef3c7" transform="rotate(10 45 15)"/>
   
-  <!-- 脸部 - 白色/奶油色 -->
-  <ellipse cx="32" cy="36" rx="20" ry="18" fill="#fffbeb"/>
+  <!-- 脸部 - 奶油白 -->
+  <ellipse cx="32" cy="38" rx="22" ry="20" fill="#fffbeb"/>
   
   <!-- 额头橙色毛发 -->
-  <ellipse cx="32" cy="24" rx="16" ry="10" fill="#f59e0b"/>
+  <ellipse cx="32" cy="26" rx="18" ry="10" fill="#f59e0b"/>
   
   <!-- 脸部白色区域 -->
-  <ellipse cx="32" cy="38" rx="14" ry="12" fill="#fffbeb"/>
+  <ellipse cx="32" cy="40" rx="16" ry="14" fill="#fffbeb"/>
   
-  <!-- 眼睛 - 大圆眼睛 -->
-  <circle cx="24" cy="34" r="6" fill="#1f2937"/>
-  <circle cx="40" cy="34" r="6" fill="#1f2937"/>
-  <!-- 眼睛高光 -->
-  <circle cx="26" cy="32" r="2.5" fill="#fff"/>
-  <circle cx="42" cy="32" r="2.5" fill="#fff"/>
-  <!-- 眼睛小高光 -->
-  <circle cx="22" cy="36" r="1" fill="#fff"/>
-  <circle cx="38" cy="36" r="1" fill="#fff"/>
+  <!-- 左眼睛 - 睁开 -->
+  <circle cx="24" cy="36" r="5" fill="#1f2937"/>
+  <circle cx="26" cy="34" r="2" fill="#fff"/>
+  <circle cx="23" cy="38" r="0.8" fill="#fff"/>
   
-  <!-- 鼻子 - 黑色三角形 -->
-  <ellipse cx="32" cy="44" rx="5" ry="4" fill="#1f2937"/>
-  <!-- 鼻子高光 -->
-  <ellipse cx="30" cy="43" rx="1.5" ry="1" fill="#6b7280"/>
+  <!-- 右眼睛 - 闭着（眨眼） -->
+  <path d="M37 36 Q42 40 47 36" stroke="#1f2937" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- 鼻子 -->
+  <ellipse cx="32" cy="46" rx="5" ry="4" fill="#1f2937"/>
+  <ellipse cx="30" cy="45" rx="1.5" ry="1" fill="#6b7280"/>
   
   <!-- 嘴巴 -->
-  <path d="M28 48 Q32 52 36 48" stroke="#78350f" stroke-width="2" fill="none"/>
+  <path d="M28 50 Q32 54 36 50" stroke="#78350f" stroke-width="2" fill="none"/>
   
   <!-- 舌头 -->
-  <ellipse cx="32" cy="51" rx="4" ry="3" fill="#f87171"/>
+  <ellipse cx="32" cy="53" rx="4" ry="3" fill="#f87171"/>
   
   <!-- 腮红 -->
-  <ellipse cx="18" cy="40" rx="4" ry="2.5" fill="#fb7185" opacity="0.6"/>
-  <ellipse cx="46" cy="40" rx="4" ry="2.5" fill="#fb7185" opacity="0.6"/>
+  <ellipse cx="16" cy="42" rx="4" ry="2.5" fill="#fb7185" opacity="0.6"/>
+  <ellipse cx="48" cy="42" rx="4" ry="2.5" fill="#fb7185" opacity="0.6"/>
 </svg>
