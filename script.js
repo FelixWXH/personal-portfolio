@@ -217,6 +217,6 @@ function animateCounter(element, target, duration = 2000) {
 // ========================================
 // Console Easter Egg
 // ========================================
-console.log('%c👋 你好，访客！', 'font-size: 24px; font-weight: bold; color: #6366f1;');
+console.log('%c👋 你好，访客！', 'font-size: 24px; font-weight: bold; color: #3b82f1;');
 console.log('%c欢迎来到我的个人主页，希望你喜欢！', 'font-size: 14px; color: #a0a0b0;');
-console.log('%c如果你对代码感兴趣，欢迎查看源码或联系我！', 'font-size: 12px; color: #8b5cf6;');
+console.log('%c如果你对代码感兴趣，欢迎查看源码或联系我！', 'font-size: 12px; color: #ec4899;');

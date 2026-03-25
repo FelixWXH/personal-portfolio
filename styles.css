@@ -9,15 +9,15 @@
     --text-primary: #ffffff;
     --text-secondary: #a0a0b0;
     --text-muted: #6b6b7b;
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    --accent-primary: #3b82f6;
+    --accent-secondary: #ec4899;
+    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #ec4899 100%);
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+    --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
     
     /* Typography */
     --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -198,7 +198,7 @@ a {
 .sphere-1 {
     width: 600px;
     height: 600px;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     top: -200px;
     right: -100px;
     animation-delay: 0s;
@@ -207,7 +207,7 @@ a {
 .sphere-2 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
     bottom: -100px;
     left: -100px;
     animation-delay: -5s;
@@ -216,7 +216,7 @@ a {
 .sphere-3 {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -325,7 +325,7 @@ a {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 60px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.5);
 }
 
 .btn-primary svg {
@@ -416,7 +416,7 @@ a {
 }
 
 .glass-card:hover {
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(59, 130, 246, 0.3);
     box-shadow: var(--shadow-md);
 }
 
@@ -531,7 +531,7 @@ a {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(99, 102, 241, 0.9);
+    background: rgba(59, 130, 246, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
