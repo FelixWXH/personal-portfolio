@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 10 - Dark Professional</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            max-width: 1000px;
+            padding: 3rem;
+        }
+        .sidebar {
+            border-right: 1px solid #222;
+            padding-right: 3rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+        .logo span {
+            color: #3b82f6;
+        }
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav a::before {
+            content: '→';
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .nav a:hover {
+            color: #fff;
+        }
+        .nav a:hover::before {
+            opacity: 1;
+        }
+        .main {
+            padding-top: 1rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        h1 span {
+            color: #3b82f6;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 400px;
+            line-height: 1.7;
+        }
+        .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1a1a1a;
+        }
+        .stat h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        .stat p {
+            color: #555;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3b82f6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #222;
+                padding-bottom: 2rem;
+            }
+            .nav {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">PRO<span>.</span></div>
+            <nav class="nav">
+                <a href="#">关于</a>
+                <a href="#">服务</a>
+                <a href="#">案例</a>
+                <a href="#">联系</a>
+            </nav>
+        </div>
+        <div class="main">
+            <h1>Dark<br><span>Professional</span></h1>
+            <p class="subtitle">专业深色主题设计，现代商务美学。专注用户体验，打造极致视觉体验。</p>
+            <a href="#" class="btn">开始合作</a>
+            <div class="stats">
+                <div class="stat">
+                    <h3>150+</h3>
+                    <p>项目完成</p>
+                </div>
+                <div class="stat">
+                    <h3>98%</h3>
+                    <p>客户满意</p>
+                </div>
+                <div class="stat">
+                    <h3>5年</h3>
+                    <p>行业经验</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

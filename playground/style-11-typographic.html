@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 11 - Typographic</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .hero-text {
+            font-size: clamp(3rem, 12vw, 10rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 3rem;
+        }
+        .outline {
+            -webkit-text-stroke: 2px #000;
+            -webkit-text-fill-color: transparent;
+        }
+        .highlight {
+            background: #ff3366;
+            color: #fff;
+            padding: 0 0.2em;
+            display: inline;
+        }
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #000;
+        }
+        .meta h3 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .meta p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+        }
+        .meta a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid #ff3366;
+            padding-bottom: 0.1em;
+            transition: all 0.3s;
+        }
+        .meta a:hover {
+            background: #ff3366;
+            color: #fff;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .keyword {
+            padding: 0.4rem 1rem;
+            border: 1px solid #ddd;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        .keyword:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+        @media (max-width: 600px) {
+            .meta {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="hero-text">
+            TYPE<br>
+            <span class="outline">IS</span><br>
+            <span class="highlight">ART</span>
+        </h1>
+        
+        <div class="meta">
+            <div class="meta-left">
+                <h3>关于风格</h3>
+                <p>排版驱动设计<br>字体即视觉<br>文字即艺术</p>
+            </div>
+            <div class="meta-right">
+                <h3>设计理念</h3>
+                <p>大胆的排版选择，突破传统布局。让文字成为主角，用字重、大小、颜色讲述故事。<a href="#">了解更多</a></p>
+                <div class="keywords">
+                    <span class="keyword">Typography</span>
+                    <span class="keyword">Bold</span>
+                    <span class="keyword">Minimal</span>
+                    <span class="keyword">Modern</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

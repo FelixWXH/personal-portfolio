@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 12 - Nature</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: linear-gradient(135deg, #f5f7f0 0%, #e8efe0 100%);
+            color: #2d3b2d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C35 15, 45 20, 50 30 C45 40, 35 45, 30 55 C25 45, 15 40, 10 30 C15 20, 25 15, 30 5z' fill='none' stroke='%234a7c4a' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 120px 120px;
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
+        }
+        .container {
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        .leaf-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        h1 {
+            font-size: 5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        .subtitle {
+            font-size: 1.4rem;
+            color: #5a7a5a;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .card {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 450px;
+            margin: 0 auto;
+            border: 1px solid rgba(74, 124, 74, 0.2);
+            box-shadow: 0 10px 40px rgba(45, 59, 45, 0.1);
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #3d4d3d;
+            margin-bottom: 2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #4a7c4a;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #3d6b3d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(74, 124, 74, 0.3);
+        }
+        .btn-outline {
+            border: 2px solid #4a7c4a;
+            color: #4a7c4a;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #4a7c4a;
+            color: #fff;
+        }
+        .decorative-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            color: #5a7a5a;
+        }
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #5a7a5a, transparent);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="container">
+        <span class="leaf-icon">🌿</span>
+        <h1>Nature</h1>
+        <p class="subtitle">自然有机 · 绿色生态</p>
+        <div class="card">
+            <div class="decorative-line">✿</div>
+            <p>有机曲线，自然色调<br>
+            环保理念，清新氛围<br>
+            回归自然，简约舒适</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">探索</a>
+                <a href="#" class="btn btn-outline">联系</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

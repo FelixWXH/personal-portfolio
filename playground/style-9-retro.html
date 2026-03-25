@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 9 - Retro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: #f4e4c9;
+            color: #2d2d2d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 90, 43, 0.03) 2px,
+                    rgba(139, 90, 43, 0.03) 4px
+                );
+        }
+        .container {
+            text-align: center;
+            padding: 3rem;
+            max-width: 700px;
+        }
+        .ornament {
+            font-size: 2rem;
+            color: #8b5a2b;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: #2d2d2d;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .divider span {
+            font-size: 1.5rem;
+            color: #8b5a2b;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5a2b, transparent);
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #8b5a2b;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        .nav {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .nav a {
+            color: #2d2d2d;
+            text-decoration: none;
+            font-size: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .nav a:hover {
+            border-bottom-color: #8b5a2b;
+            color: #8b5a2b;
+        }
+        .frame {
+            border: 3px double #8b5a2b;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="frame">
+            <div class="ornament">❧</div>
+            <h1>Retro</h1>
+            <div class="divider">
+                <span>✦</span>
+            </div>
+            <p class="subtitle">经典怀旧 · 优雅复古</p>
+            <p>怀旧色调，古典美学<br>
+            老式排版，精致细节<br>
+            回归经典，永恒优雅</p>
+            <div class="nav">
+                <a href="#">关于</a>
+                <a href="#">作品</a>
+                <a href="#">联系</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
