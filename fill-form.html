@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息填写</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        h1 span {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title .icon {
+            font-size: 1.3rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .tags-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            min-height: 50px;
+        }
+        .tag {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .tag .remove {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .tag .remove:hover {
+            opacity: 1;
+        }
+        .tag-input {
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 100px;
+            padding: 0.5rem;
+        }
+        .tag-input:focus {
+            outline: none;
+        }
+        .hint {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+        .project-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .project-header h4 {
+            font-size: 0.9rem;
+            color: #06b6d4;
+        }
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(255,255,255,0.5);
+        }
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+        }
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .actions .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+        .copy-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .copy-toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 <span>个人信息填写</span></h1>
+        
+        <!-- 基本信息 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">👋</span>
+                基本信息
+            </div>
+            <div class="form-group">
+                <label>姓名 / 昵称 *</label>
+                <input type="text" id="name" placeholder="你想被称呼的名字">
+            </div>
+            <div class="form-group">
+                <label>一句话定位 *</label>
+                <input type="text" id="tagline" placeholder="如：AI 探索者 / 全栈开发者 / 产品设计师">
+                <p class="hint">显示在首页的打字机效果</p>
+            </div>
+            <div class="form-group">
+                <label>个人简介</label>
+                <textarea id="bio" placeholder="介绍一下你自己，2-3句话即可..."></textarea>
+            </div>
+        </div>
+        
+        <!-- 教育背景 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🎓</span>
+                教育背景
+            </div>
+            <div class="form-group">
+                <label>学校</label>
+                <input type="text" id="school" placeholder="XX大学">
+            </div>
+            <div class="form-group">
+                <label>专业</label>
+                <input type="text" id="major" placeholder="计算机科学与技术">
+            </div>
+        </div>
+        
+        <!-- 工作经历 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">💼</span>
+                工作经历
+            </div>
+            <div class="form-group">
+                <label>公司</label>
+                <input type="text" id="company" placeholder="XX科技 / 某互联网公司">
+            </div>
+            <div class="form-group">
+                <label>职位</label>
+                <input type="text" id="position" placeholder="后端工程师">
+            </div>
+            <div class="form-group">
+                <label>主要工作</label>
+                <textarea id="workContent" placeholder="负责 XX 系统开发，使用 XX 技术栈..."></textarea>
+            </div>
+        </div>
+        
+        <!-- 技能标签 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🎯</span>
+                技能标签
+            </div>
+            <div class="form-group">
+                <label>技能（输入后按回车添加）</label>
+                <div class="tags-input" id="skillsContainer">
+                    <input type="text" class="tag-input" id="skillInput" placeholder="输入技能，按回车添加...">
+                </div>
+                <p class="hint">建议 6-10 个，如：Python, JavaScript, React, Docker</p>
+            </div>
+        </div>
+        
+        <!-- 项目经历 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📁</span>
+                项目经历
+            </div>
+            <div id="projectsContainer"></div>
+            <button class="btn btn-secondary" onclick="addProject()">+ 添加项目</button>
+        </div>
+        
+        <!-- 联系方式 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📞</span>
+                联系方式
+            </div>
+            <div class="form-group">
+                <label>邮箱 *</label>
+                <input type="email" id="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label>GitHub</label>
+                <input type="text" id="github" placeholder="github.com/yourusername">
+            </div>
+            <div class="form-group">
+                <label>微信</label>
+                <input type="text" id="wechat" placeholder="微信号（可选）">
+            </div>
+        </div>
+        
+        <!-- 操作按钮 -->
+        <div class="actions">
+            <button class="btn btn-primary" onclick="generateOutput()">📋 生成内容</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🗑️ 清空重填</button>
+        </div>
+    </div>
+    
+    <div class="copy-toast" id="toast">✅ 已复制到剪贴板！</div>
+
+    <script>
+        let skills = [];
+        let projectCount = 0;
+        
+        // 技能标签输入
+        const skillInput = document.getElementById('skillInput');
+        skillInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const value = skillInput.value.trim();
+                if (value && !skills.includes(value)) {
+                    skills.push(value);
+                    renderSkills();
+                }
+                skillInput.value = '';
+            }
+        });
+        
+        function renderSkills() {
+            const container = document.getElementById('skillsContainer');
+            container.innerHTML = skills.map(skill => `
+                <span class="tag">
+                    ${skill}
+                    <span class="remove" onclick="removeSkill('${skill}')">×</span>
+                </span>
+            `).join('') + '<input type="text" class="tag-input" id="skillInput" placeholder="输入技能，按回车添加...">';
+            
+            document.getElementById('skillInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const value = e.target.value.trim();
+                    if (value && !skills.includes(value)) {
+                        skills.push(value);
+                        renderSkills();
+                    }
+                    e.target.value = '';
+                }
+            });
+        }
+        
+        function removeSkill(skill) {
+            skills = skills.filter(s => s !== skill);
+            renderSkills();
+        }
+        
+        // 项目管理
+        function addProject() {
+            projectCount++;
+            const container = document.getElementById('projectsContainer');
+            const div = document.createElement('div');
+            div.className = 'project-item';
+            div.id = `project-${projectCount}`;
+            div.innerHTML = `
+                <div class="project-header">
+                    <h4>项目 ${projectCount}</h4>
+                    <button class="btn btn-danger" onclick="removeProject(${projectCount})">删除</button>
+                </div>
+                <div class="form-group">
+                    <label>项目名称</label>
+                    <input type="text" class="project-name" placeholder="XX系统 / XX应用">
+                </div>
+                <div class="form-group">
+                    <label>项目简介</label>
+                    <textarea class="project-desc" placeholder="简单描述这个项目..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>技术栈（逗号分隔）</label>
+                    <input type="text" class="project-tech" placeholder="Python, React, Docker">
+                </div>
+            `;
+            container.appendChild(div);
+        }
+        
+        function removeProject(id) {
+            document.getElementById(`project-${id}`).remove();
+        }
+        
+        // 生成输出
+        function generateOutput() {
+            const name = document.getElementById('name').value || '访客';
+            const tagline = document.getElementById('tagline').value || '热爱技术的探索者';
+            const bio = document.getElementById('bio').value;
+            const school = document.getElementById('school').value;
+            const major = document.getElementById('major').value;
+            const company = document.getElementById('company').value;
+            const position = document.getElementById('position').value;
+            const workContent = document.getElementById('workContent').value;
+            const email = document.getElementById('email').value;
+            const github = document.getElementById('github').value;
+            const wechat = document.getElementById('wechat').value;
+            
+            // 收集项目
+            const projects = [];
+            document.querySelectorAll('.project-item').forEach(item => {
+                projects.push({
+                    name: item.querySelector('.project-name').value,
+                    desc: item.querySelector('.project-desc').value,
+                    tech: item.querySelector('.project-tech').value
+                });
+            });
+            
+            // 生成 JSON
+            const output = {
+                name,
+                tagline,
+                bio,
+                education: { school, major },
+                work: { company, position, content: workContent },
+                skills,
+                projects: projects.filter(p => p.name),
+                contact: { email, github, wechat }
+            };
+            
+            // 显示结果
+            const jsonStr = JSON.stringify(output, null, 2);
+            console.log(jsonStr);
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(jsonStr).then(() => {
+                showToast();
+            });
+            
+            // 也可以发送到服务器或显示在页面上
+            alert('✅ 信息已生成并复制到剪贴板！\n\n请将复制的内容发送给我，我会帮你更新网页。');
+        }
+        
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+        
+        function clearAll() {
+            if (confirm('确定要清空所有内容吗？')) {
+                document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+                skills = [];
+                renderSkills();
+                document.getElementById('projectsContainer').innerHTML = '';
+                projectCount = 0;
+            }
+        }
+        
+        // 初始化一个项目
+        addProject();
+    </script>
+</body>
+</html>
