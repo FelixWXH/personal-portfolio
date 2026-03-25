@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="#about">关于</a>
+                <a href="#projects">项目</a>
+                <a href="#life">生活</a>
+                <a href="#contact">联系</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-sphere sphere-1"></div>
+            <div class="gradient-sphere sphere-2"></div>
+            <div class="gradient-sphere sphere-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="avatar-container">
+                <div class="avatar-ring"></div>
+                <div class="avatar">
+                    <span class="avatar-emoji">👋</span>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="greeting">Hi, I'm</span>
+                <span class="name" id="userName">访客</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span id="typewriter"></span>
+                <span class="cursor">|</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">
+                    <span>了解更多</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>向下滚动</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                关于我
+            </h2>
+            <div class="about-grid">
+                <div class="about-intro glass-card">
+                    <p class="intro-text">
+                        我是一名热爱技术与创新的探索者。专注于人工智能、全栈开发领域，
+                        喜欢用代码解决现实问题，用创意打造美好体验。
+                    </p>
+                    <p class="intro-text">
+                        在工作之余，我喜欢阅读、摄影和探索新技术。相信技术的力量可以改变世界，
+                        也相信持续学习是成长的关键。
+                    </p>
+                </div>
+                <div class="about-cards">
+                    <div class="info-card glass-card fade-in">
+                        <div class="card-icon">🎓</div>
+                        <h3>教育背景</h3>
+                        <p class="card-text">点击编辑你的教育信息</p>
+                    </div>
+                    <div class="info-card glass-card fade-in">
+                        <div class="card-icon">💼</div>
+                        <h3>工作经历</h3>
+                        <p class="card-text">点击编辑你的工作经历</p>
+                    </div>
+                    <div class="info-card glass-card fade-in">
+                        <div class="card-icon">🎯</div>
+                        <h3>技能专长</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">AI/ML</span>
+                            <span class="skill-tag">前端开发</span>
+                            <span class="skill-tag">数据分析</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                项目经历
+            </h2>
+            <div class="projects-grid">
+                <article class="project-card glass-card fade-in">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>🤖</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">查看详情 →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">人工智能</span>
+                        <h3 class="project-title">AI 助手项目</h3>
+                        <p class="project-desc">基于大语言模型的智能对话系统，支持多轮对话、知识问答等功能。</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LLM</span>
+                            <span>FastAPI</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card glass-card fade-in">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>📊</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">查看详情 →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">数据分析</span>
+                        <h3 class="project-title">数据可视化平台</h3>
+                        <p class="project-desc">交互式数据分析平台，支持多种图表类型和实时数据更新。</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card glass-card fade-in">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>🌐</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">查看详情 →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Web 开发</span>
+                        <h3 class="project-title">个人博客系统</h3>
+                        <p class="project-desc">支持 Markdown 编辑的博客系统，具有评论、搜索等功能。</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生活分享 -->
+    <section id="life" class="section life">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                生活点滴
+            </h2>
+            <div class="life-grid">
+                <div class="life-card large glass-card fade-in">
+                    <div class="life-image">
+                        <div class="life-placeholder">
+                            <span>📷</span>
+                            <p>添加你的照片</p>
+                        </div>
+                    </div>
+                    <div class="life-content">
+                        <span class="life-date">2026年3月</span>
+                        <h3>美好的一天</h3>
+                        <p>记录生活中的精彩瞬间...</p>
+                    </div>
+                </div>
+                <div class="life-card glass-card fade-in">
+                    <div class="life-image">
+                        <div class="life-placeholder small">
+                            <span>☕</span>
+                        </div>
+                    </div>
+                    <div class="life-content">
+                        <span class="life-date">日常生活</span>
+                        <h3>咖啡时光</h3>
+                    </div>
+                </div>
+                <div class="life-card glass-card fade-in">
+                    <div class="life-image">
+                        <div class="life-placeholder small">
+                            <span>📚</span>
+                        </div>
+                    </div>
+                    <div class="life-content">
+                        <span class="life-date">学习笔记</span>
+                        <h3>读书分享</h3>
+                    </div>
+                </div>
+                <div class="life-card glass-card fade-in">
+                    <div class="life-image">
+                        <div class="life-placeholder small">
+                            <span>✈️</span>
+                        </div>
+                    </div>
+                    <div class="life-content">
+                        <span class="life-date">旅行足迹</span>
+                        <h3>探索世界</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                联系我
+            </h2>
+            <div class="contact-content glass-card">
+                <p class="contact-intro">如果你有任何问题、合作意向或只是想打个招呼，欢迎随时联系我！</p>
+                <div class="contact-links">
+                    <a href="mailto:your@email.com" class="contact-link">
+                        <span class="contact-icon">📧</span>
+                        <span>your@email.com</span>
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                        <span class="contact-icon">💻</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">💬</span>
+                        <span>微信</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Personal Portfolio. Made with ❤️</p>
+            <p class="footer-links">
+                <a href="#home">首页</a>
+                <span>·</span>
+                <a href="#about">关于</a>
+                <span>·</span>
+                <a href="#projects">项目</a>
+                <span>·</span>
+                <a href="#contact">联系</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
