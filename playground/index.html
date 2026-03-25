@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Playground - 设计风格选择</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #111;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .preview {
+            height: 250px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #444;
+            position: relative;
+            overflow: hidden;
+        }
+        .preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            width: 200%;
+            height: 200%;
+            pointer-events: none;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .card-content h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .card-link {
+            display: block;
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .card-link:hover {
+            opacity: 0.9;
+        }
+        .tag-minimal { background: #333; color: #fff; }
+        .tag-cards { background: #667eea; color: #fff; }
+        .tag-neon { background: #0ff; color: #000; }
+        .tag-terminal { background: #27c93f; color: #000; }
+        .tag-split { background: #e94560; color: #fff; }
+        .tag-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 Frontend Playground</h1>
+        <p>选择你喜欢的设计风格</p>
+    </div>
+    
+    <div class="grid">
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-1-minimal.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-minimal">Style 1</span>
+                <h3>Minimal 极简风格</h3>
+                <p>黑白为主，大量留白，让内容自己说话。适合追求简洁的品牌。</p>
+                <a href="style-1-minimal.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-2-cards.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-cards">Style 2</span>
+                <h3>Cards 卡片式布局</h3>
+                <p>清晰的信息层级，悬停交互效果。适合展示多个模块内容。</p>
+                <a href="style-2-cards.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-3-neon.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-neon">Style 3</span>
+                <h3>Neon 霓虹风格</h3>
+                <p>赛博朋克美学，霓虹灯效果，扫描线动画。适合科技/游戏主题。</p>
+                <a href="style-3-neon.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-4-terminal.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-terminal">Style 4</span>
+                <h3>Terminal 终端风格</h3>
+                <p>命令行界面模拟，极客感十足。适合开发者/程序员个人主页。</p>
+                <a href="style-4-terminal.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-5-split.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-split">Style 5</span>
+                <h3>Split 分屏式设计</h3>
+                <p>左右对称布局，视觉冲击力强。适合个人品牌展示。</p>
+                <a href="style-5-split.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="preview">
+                <iframe src="style-6-gradient.html"></iframe>
+            </div>
+            <div class="card-content">
+                <span class="card-tag tag-gradient">Style 6</span>
+                <h3>Gradient 渐变现代</h3>
+                <p>流动渐变背景，大标题设计。现代感强，视觉吸引力大。</p>
+                <a href="style-6-gradient.html" class="card-link">查看完整版</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 3 - Neon</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 
+                0 0 10px #0ff,
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+            to { text-shadow: 0 0 20px #f0f, 0 0 40px #f0f, 0 0 60px #f0f; }
+        }
+        .subtitle {
+            color: #0ff;
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem;
+            letter-spacing: 4px;
+        }
+        .neon-box {
+            border: 2px solid #f0f;
+            padding: 2rem 3rem;
+            margin: 2rem auto;
+            max-width: 400px;
+            box-shadow: 
+                0 0 10px #f0f,
+                inset 0 0 10px rgba(255,0,255,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 2px solid #0ff;
+            color: #0ff;
+            text-decoration: none;
+            margin: 0.5rem;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #0ff;
+            color: #0a0a0a;
+            box-shadow: 0 0 20px #0ff;
+        }
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(0,0,0,0.1) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+        <h1>NEON</h1>
+        <p class="subtitle">赛博朋克 · 霓虹风格</p>
+        <div class="neon-box">
+            <p style="color:#888;font-size:0.9rem;">
+                未来感设计，霓虹灯效果<br>
+                扫描线动画，科幻氛围
+            </p>
+        </div>
+        <a href="#" class="btn">探索</a>
+        <a href="#" class="btn">联系</a>
+    </div>
+</body>
+</html>

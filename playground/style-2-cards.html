@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 2 - Cards</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .header p { opacity: 0.8; }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .card-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 卡片式布局</h1>
+        <p>清晰的信息层级，悬停交互效果</p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">👋</div>
+            <h3>关于我</h3>
+            <p>热爱技术，追求极致的用户体验</p>
+            <span class="card-tag">简介</span>
+        </div>
+        <div class="card">
+            <div class="card-icon">💼</div>
+            <h3>项目经历</h3>
+            <p>多个开源项目，丰富的实战经验</p>
+            <span class="card-tag">作品</span>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>技能专长</h3>
+            <p>前端开发、UI设计、产品思维</p>
+            <span class="card-tag">能力</span>
+        </div>
+    </div>
+</body>
+</html>

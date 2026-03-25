@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 1 - Minimal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: 200;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+        .line {
+            width: 60px;
+            height: 1px;
+            background: #1a1a1a;
+            margin: 2rem auto;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .links a:hover {
+            border-bottom-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello.</h1>
+        <div class="line"></div>
+        <p>极简主义设计，留白之美。少即是多，让内容自己说话。</p>
+        <div class="links">
+            <a href="#">关于</a>
+            <a href="#">作品</a>
+            <a href="#">联系</a>
+        </div>
+    </div>
+</body>
+</html>

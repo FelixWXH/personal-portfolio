@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 4 - Terminal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0d1117;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .terminal {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .terminal-header {
+            background: #21262d;
+            padding: 0.8rem 1rem;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.85rem;
+        }
+        .terminal-body {
+            padding: 1.5rem;
+            color: #c9d1d9;
+            line-height: 1.8;
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #7ee787; }
+        .output { color: #8b949e; }
+        .highlight { color: #ffa657; }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #58a6ff;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .ascii-art {
+            color: #58a6ff;
+            white-space: pre;
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <span class="terminal-title">visitor@portfolio ~ </span>
+        </div>
+        <div class="terminal-body">
+            <div class="ascii-art">
+   _____ _           _        _____           _ 
+  / ____| |         | |      / ____|         | |
+ | |    | | _____  _| |__   | |     ___   __| | ___
+ | |    | |/ _ \ \/ / '_ \  | |    / _ \ / _` |/ _ \
+ | |____| |  __/>  <| | | | | |___| (_) | (_| |  __/
+  \_____|_|\___/_/\_\_| |_|  \_____\___/ \__,_|\___|
+            </div>
+            <br>
+            <p><span class="prompt">visitor@portfolio</span>:<span class="highlight">~</span>$ <span class="command">whoami</span></p>
+            <p class="output">开发者 · 创造者 · 终身学习者</p>
+            <br>
+            <p><span class="prompt">visitor@portfolio</span>:<span class="highlight">~</span>$ <span class="command">cat skills.txt</span></p>
+            <p class="output">Python, JavaScript, React, Node.js, AI/ML</p>
+            <br>
+            <p><span class="prompt">visitor@portfolio</span>:<span class="highlight">~</span>$ <span class="command">echo $STATUS</span></p>
+            <p class="output">准备就绪，随时开始新项目 ✨</p>
+            <br>
+            <p><span class="prompt">visitor@portfolio</span>:<span class="highlight">~</span>$ <span class="cursor"></span></p>
+        </div>
+    </div>
+</body>
+</html>

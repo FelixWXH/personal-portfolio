@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 5 - Split</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+        }
+        .left {
+            flex: 1;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            color: white;
+        }
+        .right {
+            flex: 1;
+            background: linear-gradient(135deg, #0f3460 0%, #e94560 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        .desc {
+            font-size: 1rem;
+            opacity: 0.6;
+            line-height: 1.8;
+            max-width: 400px;
+        }
+        .avatar-placeholder {
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            color: white;
+            margin: 0.5rem 0;
+            min-width: 250px;
+        }
+        .info-card h3 {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 0.3rem;
+        }
+        .info-card p {
+            font-size: 1.1rem;
+        }
+        .social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .social a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .social a:hover {
+            background: white;
+            color: #1a1a2e;
+        }
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .left, .right { min-height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1>Hi, I'm <span style="color:#e94560">Developer</span></h1>
+        <p class="subtitle">全栈开发者 / AI 探索者</p>
+        <p class="desc">
+            分屏式设计，左右对称布局。
+            左侧展示个人信息，右侧展示头像和联系方式。
+            响应式设计，移动端自动切换为上下布局。
+        </p>
+        <div class="social">
+            <a href="#">G</a>
+            <a href="#">L</a>
+            <a href="#">E</a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="avatar-placeholder">👤</div>
+        <div class="info-card">
+            <h3>📍 位置</h3>
+            <p>中国 · 北京</p>
+        </div>
+        <div class="info-card">
+            <h3>💼 工作</h3>
+            <p>独立开发者</p>
+        </div>
+        <div class="info-card">
+            <h3>🎯 专注</h3>
+            <p>Web / AI / Design</p>
+        </div>
+    </div>
+</body>
+</html>
